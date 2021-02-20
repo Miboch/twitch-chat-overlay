@@ -1,1 +1,110 @@
 /* You can add global styles to this file, and also import other style files */
+
+$txt: #B7B7B7;
+$bg: #18181c;
+$frame: #383838;
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  background-color:$bg;
+  height: 100%;
+  color: $txt;
+  font-size: 14pt;
+  font-family: Ubuntu Mono, sans-serif;
+}
+
+
+.banner {
+  width: 100%;
+  height: 28px;
+  background-color: $frame;
+  &.top {
+    display: flex;
+    align-items: center;
+    padding-left: 28px;
+    font-size: .85rem;
+    border-bottom: 1px solid #101010;
+    z-index: 10;
+  }
+  &.bottom {
+    height: 11px;
+  }
+}
+
+.chat-outlet {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 100%;
+  grid-template-rows: 25px 1fr 30px 11px;
+}
+
+.decorator {
+  display: flex;
+  align-items: flex-end;
+  padding: 8px;
+  border-left: 11px solid $frame;
+  border-right: 11px solid $frame;
+}
+
+.actual-outlet-wrapper {
+
+}
+
+.actual-outlet {
+  overflow-y: hidden;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  overflow-scrolling: auto;
+  border-left: 11px solid $frame;
+  border-right: 11px solid $frame;
+  p {
+    margin-block: 5px;
+    margin-bottom: 3px;
+    margin-left: 10px;
+    display: inline-block;
+    &:before {
+      content: "sudo -u ";
+      color: darken($txt, 40);
+    }
+    &:after {
+      content: "\"";
+      color: darken($txt, 40);
+    }
+  }
+}
+
+:host {
+  height: 100%;
+}
+
+.blinky {
+  width: 9px;
+  height: 18px;
+  background-color: $txt;
+  display: inline-block;
+  margin-left: .2em;
+  animation: blink 2s steps(3, start) infinite;
+}
+
+@keyframes blink {
+  from {
+    visibility: visible;
+  }
+  to {
+    visibility: hidden;
+  }
+}
+
+.username {
+  margin: 0;
+  &:after {
+    content: " echo \"";
+    color: darken($txt, 40);
+  }
+}
