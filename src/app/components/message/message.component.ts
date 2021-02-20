@@ -23,6 +23,12 @@ export class MessageComponent implements OnInit {
     }
   }
 
+  // TODO: Fix ACTION tags. What the fuck is going on there
+  // TODO: Fix highlighting of messages [new feature].
+  // TODO: Fix emotes. They borked. The positions is an "array" of comma-separated start-ends, so id:start-end,start-end...
+  // additionally, need to split the message based on emoteText,
+  // join the message back together using grabEmoteUrl as the join operator
+
   ngOnInit(): void {
   }
 
