@@ -1,5 +1,5 @@
-﻿<div class="message-container">
-  <p><span class="username" [style.color]="message.color">{{message.displayName}}</span><span #messageBucket>{{message.userType}}</span></p>
+﻿<div class="message-container" @fadeIn>
+  <p><span class="username" [style.color]="message.color">{{message.displayName}}</span><span #messageBucket style="display: inline-block">{{message.userType}}</span></p>
 </div>
 
 

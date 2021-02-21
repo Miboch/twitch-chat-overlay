@@ -1,5 +1,7 @@
-﻿export interface EmoteDataModel {
+﻿import {RangePairModel} from './range-pair.model';
+
+export interface EmoteDataModel {
   emoteId: string;
-  start: number;
-  end: number;
+  rangePairs: RangePairModel[];
+  replaceString: string;
 }

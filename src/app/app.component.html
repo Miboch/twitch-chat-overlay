@@ -1,10 +1,10 @@
 <div class="chat-outlet">
-  <div class="top banner">AccordingToBo@TwitchChat /home/live</div>
+  <div class="top banner">{{channel}}@TwitchChat /home/live</div>
   <div class="actual-outlet">
     <div [messageOutlet]="chatMessageProcessor"></div>
   </div>
   <div class="decorator">
-    AccordingToBo@TwitchChat: <span class="blinky"></span>
+    {{channel}}@TwitchChat: <span class="blinky"></span>
   </div>
   <div class="bottom banner"></div>
 </div>

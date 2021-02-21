@@ -23,12 +23,12 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
-    // of("@badge-info=;badges=broadcaster/1;client-nonce=3359f1962e5bec9f97a349dc514572da;color=#1E90FF;display-name=AccordingToBo;emotes=;flags=;id=219d18ea-1306-4cf2-9a1a-cf827a275b1c;mod=0;room-id=407018183;subscriber=0;tmi-sent-ts=1613816551759;turbo=0;user-id=407018183;user-type= :accordingtobo!accordingtobo@accordingtobo.tmi.twitch.tv PRIVMSG #accordingtobo :lets try that one more time shall we;;;;;; there is more text after this ;user-type= even more text!")
+    // of("@badge-info=;badges=broadcaster/1;client-nonce=4457fa203a4974e3a7f1971c9487a969;color=#1E90FF;display-name=AccordingToBo;emotes=64138:26-34,36-44,46-54/123171:72-83/25:85-89;flags=;id=f797c26d-836f-428b-adc3-d9fa8575f6b4;mod=0;room-id=407018183;subscriber=0;tmi-sent-ts=1613878339826;turbo=0;user-id=407018183;user-type= :accordingtobo!accordingtobo@accordingtobo.tmi.twitch.tv PRIVMSG #accordingtobo :test message with emotes: SeemsGood SeemsGood SeemsGood and more emotes CoolStoryBob Kappa")
     //   .pipe(
     //     delay(100),
     //     tap(raw => this.processRawChatMessage(raw)),
     //     switchMap(raw => {
-    //       return of(raw).pipe(delay(6000), repeat())
+    //       return of(raw).pipe(delay(500), repeat())
     //     })
     //   ).subscribe(raw => {
     //   this.processRawChatMessage(raw);
@@ -77,7 +77,7 @@ export class AppComponent implements OnInit {
 
   cleanValues(priv: PrivMsgModel) {
     let message = priv.raw.split(";user-type=").slice(1);
-    message[0] = message[0]?.slice(message[0].indexOf("PRIVMSG #accordingtobo :") + "PRIVMSG #accordingtobo :".length);
+    message[0] = message[0]?.slice(message[0].indexOf(`PRIVMSG ${this.channel} :`) + `PRIVMSG ${this.channel} :`.length);
     priv.userType = message.join("");
   }
 
