@@ -53,7 +53,7 @@ export class MessageComponent implements OnInit {
     let newInnerValue = message.userType;
     emotes.forEach(emote => {
       emote.replaceString = message.userType.slice(emote.rangePairs[0].start, emote.rangePairs[0].end + 1);
-      newInnerValue = newInnerValue.replace(new RegExp(`${emote.replaceString}`, 'g'), this.grabEmoteUrl(emote.emoteId))
+      newInnerValue = newInnerValue.replaceAll(emote.replaceString, this.grabEmoteUrl(emote.emoteId))
     })
     setTimeout(() => {
       this.renderer.setProperty(this.messageBucket.nativeElement, "innerHTML", newInnerValue);
